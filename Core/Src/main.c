@@ -1,4 +1,5 @@
-/* USER CODE BEGIN Header */
+ /* USER CODE BEGIN Header */
+//based on: https://notes.iopush.net/stm32-custom-usb-hid-step-by-step-2/
 /**
   ******************************************************************************
   * @file           : main.c
@@ -55,6 +56,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "usbd_hid.h"
+#include "usb_hid_keys.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,7 +99,30 @@ static void MX_GPIO_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	 __uint8_t buffer[4]={0,0,0,0};
+
+
+	 // HID Keyboard
+	  struct keyboardHID_t {
+	      uint8_t id;
+	      uint8_t modifiers;
+	      uint8_t key1;
+	      uint8_t key2;
+	      uint8_t key3;
+	  };
+	  struct keyboardHID_t keyboardHID;
+	  keyboardHID.id = 1;
+	  keyboardHID.modifiers = 0;
+	  keyboardHID.key1 = 0;
+	  keyboardHID.key2 = 0;
+	  keyboardHID.key3 = 0;
+	  // HID Media
+	  struct mediaHID_t {
+	    uint8_t id;
+	    uint8_t keys;
+	  };
+	  struct mediaHID_t mediaHID;
+	  mediaHID.id = 2;
+	  mediaHID.keys = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -106,7 +131,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  buffer[1]=10;
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -131,9 +156,18 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	  USBD_HID_SendReport(  &hUsbDeviceFS,buffer,4);
+//	  USBD_HID_SendReport(  &hUsbDeviceFS,buffer,4);
 	  HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
-	  HAL_Delay(500);
+
+	      keyboardHID.modifiers = KEY_MOD_RSHIFT;
+	      keyboardHID.key1 = KEY_L;
+	      USBD_HID_SendReport(&hUsbDeviceFS, &keyboardHID, sizeof(struct keyboardHID_t));
+	      HAL_Delay(30);
+	      keyboardHID.modifiers = 0;
+	      keyboardHID.key1 = 0;
+	      USBD_HID_SendReport(&hUsbDeviceFS, &keyboardHID, sizeof(struct keyboardHID_t));
+
+	  HAL_Delay(1000);
 
 
   }
@@ -208,8 +242,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(led1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PREVIOUSSONG_Pin PLAYPAUSE_Pin NEXTSONG_Pin */
-  GPIO_InitStruct.Pin = PREVIOUSSONG_Pin|PLAYPAUSE_Pin|NEXTSONG_Pin;
+  /*Configure GPIO pins : PLAYPAUSE_Pin NEXTSONG_Pin PREVIOUSSONG_Pin */
+  GPIO_InitStruct.Pin = PLAYPAUSE_Pin|NEXTSONG_Pin|PREVIOUSSONG_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);

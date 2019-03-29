@@ -90,12 +90,12 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define led1_Pin GPIO_PIN_13
 #define led1_GPIO_Port GPIOC
-#define PREVIOUSSONG_Pin GPIO_PIN_0
-#define PREVIOUSSONG_GPIO_Port GPIOA
 #define PLAYPAUSE_Pin GPIO_PIN_1
 #define PLAYPAUSE_GPIO_Port GPIOA
 #define NEXTSONG_Pin GPIO_PIN_2
 #define NEXTSONG_GPIO_Port GPIOA
+#define PREVIOUSSONG_Pin GPIO_PIN_3
+#define PREVIOUSSONG_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
