@@ -1,4 +1,5 @@
 /* USER CODE BEGIN Header */
+//based on: https://notes.iopush.net/stm32-custom-usb-hid-step-by-step-2/
 /**
   ******************************************************************************
   * @file           : main.h
@@ -62,7 +63,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdbool.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -90,14 +91,17 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define led1_Pin GPIO_PIN_13
 #define led1_GPIO_Port GPIOC
-#define PLAYPAUSE_Pin GPIO_PIN_1
-#define PLAYPAUSE_GPIO_Port GPIOA
-#define NEXTSONG_Pin GPIO_PIN_2
-#define NEXTSONG_GPIO_Port GPIOA
-#define PREVIOUSSONG_Pin GPIO_PIN_3
-#define PREVIOUSSONG_GPIO_Port GPIOA
+#define SCAN_PREV_Pin GPIO_PIN_1
+#define SCAN_PREV_GPIO_Port GPIOA
+#define SCAN_PREV_EXTI_IRQn EXTI1_IRQn
+#define PAUSE_Pin GPIO_PIN_2
+#define PAUSE_GPIO_Port GPIOA
+#define PAUSE_EXTI_IRQn EXTI2_IRQn
+#define SCAN_NEXT_Pin GPIO_PIN_3
+#define SCAN_NEXT_GPIO_Port GPIOA
+#define SCAN_NEXT_EXTI_IRQn EXTI3_IRQn
 /* USER CODE BEGIN Private defines */
-
+#define BUTTON_DEBOUNCE_TICKS 300
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

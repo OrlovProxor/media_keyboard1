@@ -216,7 +216,7 @@ __ALIGN_BEGIN static uint8_t USBD_HID_DeviceQualifierDesc[USB_LEN_DEV_QUALIFIER_
 
 __ALIGN_BEGIN static uint8_t HID_MOUSE_ReportDesc[HID_MOUSE_REPORT_DESC_SIZE]  __ALIGN_END =
 {
-		// 78 bytes
+		 // 78 bytes
 		  0x05, 0x01,        // Usage Page (Generic Desktop Ctrls)
 		  0x09, 0x06,        // Usage (Keyboard)
 		  0xA1, 0x01,        // Collection (Application)
