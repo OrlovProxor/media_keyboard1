@@ -1,0 +1,8 @@
+
+Debug/USB_DEVICE/App/usbd_desc.o
+Debug/media_keyboard1.map
+Debug/media_keyboard1.list
+Debug/media_keyboard1.hex
+Debug/media_keyboard1.elf
+Debug/Core/Src/stm32f1xx_it.su
+Debug/Core/Src/stm32f1xx_it.o
