@@ -1068,15 +1068,15 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.2.0/armtools/bin/../l
  .rodata.USBD_FS_InterfaceStrDescriptor.str1.1
                 0x080028bf        0xe USB_DEVICE\App\usbd_desc.o
  .rodata.USBD_FS_ManufacturerStrDescriptor.str1.1
-                0x080028cd        0xe USB_DEVICE\App\usbd_desc.o
+                0x080028cd       0x13 USB_DEVICE\App\usbd_desc.o
  .rodata.USBD_FS_ProductStrDescriptor.str1.1
-                0x080028db       0x19 USB_DEVICE\App\usbd_desc.o
+                0x080028e0       0x16 USB_DEVICE\App\usbd_desc.o
  .rodata.USBD_FS_SerialStrDescriptor.str1.1
-                0x080028f4        0xd USB_DEVICE\App\usbd_desc.o
+                0x080028f6        0xd USB_DEVICE\App\usbd_desc.o
  .rodata.CSWTCH.39
-                0x08002901        0x4 USB_DEVICE\Target\usbd_conf.o
+                0x08002903        0x4 USB_DEVICE\Target\usbd_conf.o
                 0x08002908                . = ALIGN (0x4)
- *fill*         0x08002905        0x3 
+ *fill*         0x08002907        0x1 
 
 .rel.dyn        0x08002908        0x0
  .rel.iplt      0x08002908        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.2.0/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7-m/crtbegin.o
@@ -1258,27 +1258,27 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.2.0/armtools/bin/../l
                 0x0000048e       0x1d c:/program files (x86)/atollic/truestudio for stm32 9.2.0/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7-m/crtn.o
 OUTPUT(media_keyboard1.elf elf32-littlearm)
 
-.debug_info     0x00000000    0x15a63
+.debug_info     0x00000000    0x15a62
  .debug_info    0x00000000     0x14d6 Core\Src\main.o
  .debug_info    0x000014d6      0xad2 Core\Src\stm32f1xx_hal_msp.o
- .debug_info    0x00001fa8     0x1553 Core\Src\stm32f1xx_it.o
- .debug_info    0x000034fb      0xc4d Core\Src\system_stm32f1xx.o
- .debug_info    0x00004148      0xfc8 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.o
- .debug_info    0x00005110     0x14a9 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.o
- .debug_info    0x000065b9      0xec2 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.o
- .debug_info    0x0000747b     0x19bf Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pcd.o
- .debug_info    0x00008e3a      0xe43 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pcd_ex.o
- .debug_info    0x00009c7d     0x123d Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.o
- .debug_info    0x0000aeba      0xc9d Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.o
- .debug_info    0x0000bb57     0x1746 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_ll_usb.o
- .debug_info    0x0000d29d     0x1194 Middlewares\ST\STM32_USB_Device_Library\Class\HID\Src\usbd_hid.o
- .debug_info    0x0000e431     0x14ac Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.o
- .debug_info    0x0000f8dd     0x14df Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.o
- .debug_info    0x00010dbc     0x100b Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.o
- .debug_info    0x00011dc7      0xded USB_DEVICE\App\usb_device.o
- .debug_info    0x00012bb4      0xdc0 USB_DEVICE\App\usbd_desc.o
- .debug_info    0x00013974     0x2089 USB_DEVICE\Target\usbd_conf.o
- .debug_info    0x000159fd       0x66 startup\startup_stm32f103xb.o
+ .debug_info    0x00001fa8     0x1552 Core\Src\stm32f1xx_it.o
+ .debug_info    0x000034fa      0xc4d Core\Src\system_stm32f1xx.o
+ .debug_info    0x00004147      0xfc8 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.o
+ .debug_info    0x0000510f     0x14a9 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.o
+ .debug_info    0x000065b8      0xec2 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.o
+ .debug_info    0x0000747a     0x19bf Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pcd.o
+ .debug_info    0x00008e39      0xe43 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pcd_ex.o
+ .debug_info    0x00009c7c     0x123d Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.o
+ .debug_info    0x0000aeb9      0xc9d Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.o
+ .debug_info    0x0000bb56     0x1746 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_ll_usb.o
+ .debug_info    0x0000d29c     0x1194 Middlewares\ST\STM32_USB_Device_Library\Class\HID\Src\usbd_hid.o
+ .debug_info    0x0000e430     0x14ac Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.o
+ .debug_info    0x0000f8dc     0x14df Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.o
+ .debug_info    0x00010dbb     0x100b Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.o
+ .debug_info    0x00011dc6      0xded USB_DEVICE\App\usb_device.o
+ .debug_info    0x00012bb3      0xdc0 USB_DEVICE\App\usbd_desc.o
+ .debug_info    0x00013973     0x2089 USB_DEVICE\Target\usbd_conf.o
+ .debug_info    0x000159fc       0x66 startup\startup_stm32f103xb.o
 
 .debug_abbrev   0x00000000     0x3309
  .debug_abbrev  0x00000000      0x2a8 Core\Src\main.o

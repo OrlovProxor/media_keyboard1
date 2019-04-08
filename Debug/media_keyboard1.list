@@ -21,23 +21,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
   8 .ARM.attributes 00000029  00000000  00000000  00020104  2**0
                   CONTENTS, READONLY
-  9 .debug_info   00015a63  00000000  00000000  0002012d  2**0
+  9 .debug_info   00015a62  00000000  00000000  0002012d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 00003309  00000000  00000000  00035b90  2**0
+ 10 .debug_abbrev 00003309  00000000  00000000  00035b8f  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_aranges 00000868  00000000  00000000  00038ea0  2**3
+ 11 .debug_aranges 00000868  00000000  00000000  00038e98  2**3
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000b80  00000000  00000000  00039708  2**3
+ 12 .debug_ranges 00000b80  00000000  00000000  00039700  2**3
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_line   00005615  00000000  00000000  0003a288  2**0
+ 13 .debug_line   00005615  00000000  00000000  0003a280  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_str    00002c11  00000000  00000000  0003f89d  2**0
+ 14 .debug_str    00002c11  00000000  00000000  0003f895  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .comment      0000007c  00000000  00000000  000424ae  2**0
+ 15 .comment      0000007c  00000000  00000000  000424a6  2**0
                   CONTENTS, READONLY
- 16 .debug_frame  00001430  00000000  00000000  0004252c  2**2
+ 16 .debug_frame  00001430  00000000  00000000  00042524  2**2
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_loc    0000475d  00000000  00000000  0004395c  2**0
+ 17 .debug_loc    0000475d  00000000  00000000  00043954  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -384,39 +384,39 @@ void Error_Handler(void)
  80002d4:	4770      	bx	lr
 
 080002d6 <HardFault_Handler>:
+}
 
 /**
-  * @brief This function handles Hard fault interrupt.
-  */
-void HardFault_Handler(void)
-{
+ * @brief This function handles Hard fault interrupt.
+ */
+void HardFault_Handler(void) {
  80002d6:	e7fe      	b.n	80002d6 <HardFault_Handler>
 
 080002d8 <MemManage_Handler>:
+}
 
 /**
-  * @brief This function handles Memory management fault.
-  */
-void MemManage_Handler(void)
-{
+ * @brief This function handles Memory management fault.
+ */
+void MemManage_Handler(void) {
  80002d8:	e7fe      	b.n	80002d8 <MemManage_Handler>
 
 080002da <BusFault_Handler>:
+}
 
 /**
-  * @brief This function handles Prefetch fault, memory access fault.
-  */
-void BusFault_Handler(void)
-{
+ * @brief This function handles Prefetch fault, memory access fault.
+ */
+void BusFault_Handler(void) {
  80002da:	e7fe      	b.n	80002da <BusFault_Handler>
 
 080002dc <UsageFault_Handler>:
+}
 
 /**
-  * @brief This function handles Undefined instruction or illegal state.
-  */
-void UsageFault_Handler(void)
-{
+ * @brief This function handles Undefined instruction or illegal state.
+ */
+void UsageFault_Handler(void) {
  80002dc:	e7fe      	b.n	80002dc <UsageFault_Handler>
 
 080002de <SVC_Handler>:
@@ -426,30 +426,30 @@ void UsageFault_Handler(void)
  80002e0:	4770      	bx	lr
 
 080002e2 <PendSV_Handler>:
+}
 
 /**
-  * @brief This function handles Pendable request for system service.
-  */
-void PendSV_Handler(void)
-{
+ * @brief This function handles Pendable request for system service.
+ */
+void PendSV_Handler(void) {
  80002e2:	4770      	bx	lr
 
 080002e4 <SysTick_Handler>:
-void SysTick_Handler(void)
-{
-  /* USER CODE BEGIN SysTick_IRQn 0 */
+ */
+void SysTick_Handler(void) {
+	/* USER CODE BEGIN SysTick_IRQn 0 */
 
-  /* USER CODE END SysTick_IRQn 0 */
-  HAL_IncTick();
+	/* USER CODE END SysTick_IRQn 0 */
+	HAL_IncTick();
  80002e4:	f000 b8d4 	b.w	8000490 <HAL_IncTick>
 
 080002e8 <USB_LP_CAN1_RX0_IRQHandler>:
-void USB_LP_CAN1_RX0_IRQHandler(void)
-{
-  /* USER CODE BEGIN USB_LP_CAN1_RX0_IRQn 0 */
+ */
+void USB_LP_CAN1_RX0_IRQHandler(void) {
+	/* USER CODE BEGIN USB_LP_CAN1_RX0_IRQn 0 */
 
-  /* USER CODE END USB_LP_CAN1_RX0_IRQn 0 */
-  HAL_PCD_IRQHandler(&hpcd_USB_FS);
+	/* USER CODE END USB_LP_CAN1_RX0_IRQn 0 */
+	HAL_PCD_IRQHandler(&hpcd_USB_FS);
  80002e8:	4801      	ldr	r0, [pc, #4]	; (80002f0 <USB_LP_CAN1_RX0_IRQHandler+0x8>)
  80002ea:	f000 bb59 	b.w	80009a0 <HAL_PCD_IRQHandler>
  80002ee:	bf00      	nop
@@ -460,7 +460,7 @@ void USB_LP_CAN1_RX0_IRQHandler(void)
 
 080002f8 <debounce>:
 
-  /* USER CODE END USB_LP_CAN1_RX0_IRQn 1 */
+	/* USER CODE END USB_LP_CAN1_RX0_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
@@ -536,7 +536,7 @@ void SendMediaKeyPressToHost(uint8_t key) {
  8000350:	2000014c 	.word	0x2000014c
 
 08000354 <EXTI1_IRQHandler>:
-{
+void EXTI1_IRQHandler(void) {
  8000354:	b508      	push	{r3, lr}
 	if (debounce(&EXTI1_lastTick)) {
  8000356:	4808      	ldr	r0, [pc, #32]	; (8000378 <EXTI1_IRQHandler+0x24>)
@@ -551,14 +551,14 @@ void SendMediaKeyPressToHost(uint8_t key) {
  800036a:	f7ff ffd5 	bl	8000318 <SendMediaKeyPressToHost>
 }
  800036e:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
  8000372:	2002      	movs	r0, #2
  8000374:	f000 ba02 	b.w	800077c <HAL_GPIO_EXTI_IRQHandler>
  8000378:	20000120 	.word	0x20000120
  800037c:	40011000 	.word	0x40011000
 
 08000380 <EXTI2_IRQHandler>:
-{
+void EXTI2_IRQHandler(void) {
  8000380:	b508      	push	{r3, lr}
 	if (debounce(&EXTI2_lastTick)) {
  8000382:	4808      	ldr	r0, [pc, #32]	; (80003a4 <EXTI2_IRQHandler+0x24>)
@@ -573,14 +573,14 @@ void SendMediaKeyPressToHost(uint8_t key) {
  8000396:	f7ff ffbf 	bl	8000318 <SendMediaKeyPressToHost>
 }
  800039a:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
  800039e:	2004      	movs	r0, #4
  80003a0:	f000 b9ec 	b.w	800077c <HAL_GPIO_EXTI_IRQHandler>
  80003a4:	20000124 	.word	0x20000124
  80003a8:	40011000 	.word	0x40011000
 
 080003ac <EXTI3_IRQHandler>:
-{
+void EXTI3_IRQHandler(void) {
  80003ac:	b508      	push	{r3, lr}
 	if (debounce(&EXTI3_lastTick)) {
  80003ae:	4808      	ldr	r0, [pc, #32]	; (80003d0 <EXTI3_IRQHandler+0x24>)
@@ -595,7 +595,7 @@ void SendMediaKeyPressToHost(uint8_t key) {
  80003c2:	f7ff ffa9 	bl	8000318 <SendMediaKeyPressToHost>
 }
  80003c6:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
  80003ca:	2008      	movs	r0, #8
  80003cc:	f000 b9d6 	b.w	800077c <HAL_GPIO_EXTI_IRQHandler>
  80003d0:	20000128 	.word	0x20000128
@@ -6064,7 +6064,7 @@ uint8_t * USBD_FS_ManufacturerStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *l
  8002540:	bd10      	pop	{r4, pc}
  8002542:	bf00      	nop
  8002544:	20000370 	.word	0x20000370
- 8002548:	080028db 	.word	0x080028db
+ 8002548:	080028e0 	.word	0x080028e0
 
 0800254c <USBD_FS_SerialStrDescriptor>:
   * @param  speed : Current device speed
@@ -6092,7 +6092,7 @@ uint8_t * USBD_FS_SerialStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)
  800255c:	bd10      	pop	{r4, pc}
  800255e:	bf00      	nop
  8002560:	20000370 	.word	0x20000370
- 8002564:	080028f4 	.word	0x080028f4
+ 8002564:	080028f6 	.word	0x080028f6
 
 08002568 <USBD_FS_ConfigStrDescriptor>:
   * @param  speed : Current device speed
@@ -6419,7 +6419,7 @@ USBD_StatusTypeDef USBD_LL_Start(USBD_HandleTypeDef *pdev)
 }
  80026dc:	bd08      	pop	{r3, pc}
  80026de:	bf00      	nop
- 80026e0:	08002901 	.word	0x08002901
+ 80026e0:	08002903 	.word	0x08002903
 
 080026e4 <USBD_LL_OpenEP>:
   * @param  ep_type: Endpoint type
@@ -6450,7 +6450,7 @@ USBD_StatusTypeDef USBD_LL_OpenEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr, uin
   return usb_status;
 }
  80026fe:	bd10      	pop	{r4, pc}
- 8002700:	08002901 	.word	0x08002901
+ 8002700:	08002903 	.word	0x08002903
 
 08002704 <USBD_LL_CloseEP>:
   * @param  pdev: Device handle
@@ -6479,7 +6479,7 @@ USBD_StatusTypeDef USBD_LL_CloseEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr)
 }
  8002718:	bd08      	pop	{r3, pc}
  800271a:	bf00      	nop
- 800271c:	08002901 	.word	0x08002901
+ 800271c:	08002903 	.word	0x08002903
 
 08002720 <USBD_LL_StallEP>:
   * @param  pdev: Device handle
@@ -6508,7 +6508,7 @@ USBD_StatusTypeDef USBD_LL_StallEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr)
 }
  8002734:	bd08      	pop	{r3, pc}
  8002736:	bf00      	nop
- 8002738:	08002901 	.word	0x08002901
+ 8002738:	08002903 	.word	0x08002903
 
 0800273c <USBD_LL_ClearStallEP>:
   * @param  pdev: Device handle
@@ -6537,7 +6537,7 @@ USBD_StatusTypeDef USBD_LL_ClearStallEP(USBD_HandleTypeDef *pdev, uint8_t ep_add
 }
  8002750:	bd08      	pop	{r3, pc}
  8002752:	bf00      	nop
- 8002754:	08002901 	.word	0x08002901
+ 8002754:	08002903 	.word	0x08002903
 
 08002758 <USBD_LL_IsStallEP>:
   */
@@ -6595,7 +6595,7 @@ USBD_StatusTypeDef USBD_LL_SetUSBAddress(USBD_HandleTypeDef *pdev, uint8_t dev_a
 }
  800278c:	bd08      	pop	{r3, pc}
  800278e:	bf00      	nop
- 8002790:	08002901 	.word	0x08002901
+ 8002790:	08002903 	.word	0x08002903
 
 08002794 <USBD_LL_Transmit>:
   * @param  pbuf: Pointer to data to be sent
@@ -6624,7 +6624,7 @@ USBD_StatusTypeDef USBD_LL_Transmit(USBD_HandleTypeDef *pdev, uint8_t ep_addr, u
 }
  80027a8:	bd08      	pop	{r3, pc}
  80027aa:	bf00      	nop
- 80027ac:	08002901 	.word	0x08002901
+ 80027ac:	08002903 	.word	0x08002903
 
 080027b0 <USBD_LL_PrepareReceive>:
   * @param  pbuf: Pointer to data to be received
@@ -6653,7 +6653,7 @@ USBD_StatusTypeDef USBD_LL_PrepareReceive(USBD_HandleTypeDef *pdev, uint8_t ep_a
 }
  80027c4:	bd08      	pop	{r3, pc}
  80027c6:	bf00      	nop
- 80027c8:	08002901 	.word	0x08002901
+ 80027c8:	08002903 	.word	0x08002903
 
 080027cc <USBD_static_malloc>:
   */
